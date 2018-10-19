@@ -33,12 +33,18 @@ console.log("Hello world");
     function initializeControls(){
         btnMenu = document.querySelector(".btnMenu");
         btnClose = document.querySelector(".btnClose");
+        btnServices = document.querySelector(".btnServices");
+        btnTeam = document.querySelector(".btnTeam");
+        btnContact = document.querySelector(".btnContact");
     }
 
     //7. Events toevoegen
     function addEvents(){
         btnMenu.addEventListener("click", btnMenuClicked)
-        btnClose.addEventListener("click", btnCloseClicked)
+        btnClose.addEventListener("click", btnMenuClicked)
+        btnServices.addEventListener("click", btnMenuClicked)
+        btnTeam.addEventListener("click", btnMenuClicked)
+        btnContact.addEventListener("click", btnMenuClicked)
     }
 
     function btnMenuClicked(){
@@ -51,20 +57,11 @@ console.log("Hello world");
         }
 
         var x = document.getElementById("header");
-        x.style.display = "none";
-    }
-
-    function btnCloseClicked(){
-        console.log("btnMenuClicked");
-        var x = document.getElementById("nav");
-        if (x.style.display === "block") {
-        x.style.display = "none";
-        } else {
-        x.style.display = "block";
-        }
-
-        var x = document.getElementById("header");
+        if (x.style.display === "none") {
         x.style.display = "flex";
+        } else {
+        x.style.display = "none";
+        }
     }
     
 })();
